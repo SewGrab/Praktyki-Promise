@@ -1,17 +1,3 @@
-/*
-Zadanie 9. (1pkt)
-Stwórz obiekt klasy Promise -> niech zakończy się powodzeniem (resolve) po 5 sekundach i zwróci string 'Udało się!'. 
-Jako callback (wywołanie w konsoli) niech wypisze zwrócony string w konsoli.
-
-Zadanie 10. (2pkt)
-Napisz funkcję multiplyAsync(x,y), która zwraca obiekt klasy Promise, kończący się porażką, gdy któryś za argumentów jest niepoprawny (nie jest liczbą). W przeciwnym przypadku zwraca iloczyn dwóch liczb. Napisz callback (wywołanie w konsoli), który wypisuje wynik w konsoli.
-
-Zadanie 11. dodatkowe (2pkt)
-Wykonaj funkcję get dla następującego url: https://jsonplaceholder.typicode.com/posts
-Jako pierwszy callback (wywołanie w konsoli) - sprawdź czy response jest poprawny (status równy 200). Jeśli tak, to zwróć response, w przeciwnym wypadku wypisz błąd w konsoli.
-Jako następny callback (wywołanie w konsoli) - użyj destrukturyzacji obiektów, aby wypisać w konsoli zmienną 'title' i 'body' każdego z postów.
- */
-
 //zad9
 const timerPromise = new Promise((resolve) => {
     setTimeout(() => {
@@ -43,6 +29,6 @@ fetch("https://jsonplaceholder.typicode.com/posts")
         }
     })
     .then((result) => {
-        console.log(result);
         console.log(result.map(({title, body}) => ({title, body}))); 
-    });
+    })
+    .catch((error) => console.log(error));
