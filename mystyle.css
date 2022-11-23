@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(199, 219, 226);
+}
+  
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+div {
+    padding: 10px;
+}
